@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Farm extends World
 {
     int[][] fields = {
-            {1,1,1,1,1,1,1,1},
-            {1,1,1,1,1,1,1,1},
-            {1,1,1,1,1,1,1,1},
-            {1,1,1,1,1,1,1,1},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         };
     int[] fieldsStartPos = new int[]{2,2};
     /**
@@ -22,7 +22,7 @@ public class Farm extends World
     public Farm()
     {    
         // Create a new world with 32x16 cells with a cell size of 32x32 pixels.
-        super(32, 16, 32); 
+        super(32, 16, 32);
         prepare();
     }
 
@@ -34,6 +34,9 @@ public class Farm extends World
     {
         InventoryButton inventoryButton = new InventoryButton();
         addObject(inventoryButton,1,14);
+        
+        addObject(new Inventory(), 0, 0);
+        
         // set fields into world
         for (int i = 0; i < this.fields.length; i++) {
             

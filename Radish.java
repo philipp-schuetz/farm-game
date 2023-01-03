@@ -31,6 +31,13 @@ public class Radish extends Item
         if (counter % 100 == 0 && growthStage < 3) {
             this.growthStage = this.growthStage + 1;
         }
-        this.setImage(this.growthStageImages[growthStage]);        
+        this.setImage(this.growthStageImages[growthStage]);
+        
+        // right click to harvest crop
+        if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 3 && this.growthStage == 3) {
+            Inventory inventory = getWorld().getObjects(Inventory.class).get(0);
+            inventory.addItem(0, 1);
+            getWorld().removeObject(this);
+        }
     }
 }

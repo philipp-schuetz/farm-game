@@ -17,7 +17,8 @@ public class Field extends Actor
         if(Greenfoot.mouseClicked(this)){
             // open seeds/harvest menu
             // is still clicked when crop growing?
-            //addObject(new Radish(),850,120);
+            MouseInfo mouse = Greenfoot.getMouseInfo();
+            getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
         }
     }
 }
