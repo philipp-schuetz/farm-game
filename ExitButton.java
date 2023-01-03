@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ExitButton extends Interface
 {
+    World exitTo;
+    public ExitButton(World world) {
+        this.exitTo = world;
+    }
+    
     /**
      * Act - do whatever the ExitButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,7 +21,7 @@ public class ExitButton extends Interface
     {
         if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("escape")) {
             if (getWorld() instanceof InventoryUi) {
-                Greenfoot.setWorld(new Farm());
+                Greenfoot.setWorld(exitTo);
             }
         }
     }

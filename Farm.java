@@ -15,6 +15,11 @@ public class Farm extends World
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         };
     int[] fieldsStartPos = new int[]{2,2};
+    
+    static int[] items = new int[24];
+    // inventory ids
+    // 0 - radish
+    
     /**
      * Constructor for objects of class Farm.
      * 
@@ -25,7 +30,12 @@ public class Farm extends World
         super(32, 16, 32);
         prepare();
     }
-
+    
+    // add item to inventory
+    public void addItem(int id, int count) {
+        this.items[id] = this.items[id] + count;
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -34,8 +44,6 @@ public class Farm extends World
     {
         InventoryButton inventoryButton = new InventoryButton();
         addObject(inventoryButton,1,14);
-        
-        addObject(new Inventory(), 0, 0);
         
         // set fields into world
         for (int i = 0; i < this.fields.length; i++) {
