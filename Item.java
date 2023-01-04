@@ -8,16 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Item extends Actor
 {
-    public static int sellPrice;
+    private static int sellPrice;
     public static int buyPriceSeed;
-    public static String name;
+    private static String name;
     
-    /**
-     * Act - do whatever the Vegetables wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
-    }
+    public String getName() {return this.name;}
+    public int getSellPrice() {return this.sellPrice;}
 }

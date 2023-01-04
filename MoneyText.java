@@ -17,5 +17,8 @@ public class MoneyText extends Interface
     public void act()
     {
         setImage(new GreenfootImage("" + this.farmWorld.getMoney(), 40, Color.WHITE, new Color(0,0,0,0)));
+        if(Greenfoot.mouseClicked(this)) {
+            this.farmWorld.addMoney(10);
+        }
     }
 }

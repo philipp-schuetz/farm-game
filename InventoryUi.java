@@ -59,8 +59,8 @@ public class InventoryUi extends World
                 this.iMod += 8;
             }
 
-            this.textName = new Text(this.item.name+": "+this.farmWorld.items[i], 20);
-            this.textPrice = new Text("G: "+this.item.sellPrice, 20);
+            this.textName = new Text(this.item.getName()+": "+this.farmWorld.items[i], 20);
+            this.textPrice = new Text("G: "+this.item.getSellPrice(), 20);
 
             int xAdd = (i-this.iMod)*this.shift;
             addObject(this.item, this.baseX+xAdd, this.baseYImg);

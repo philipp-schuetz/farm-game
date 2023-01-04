@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Carrot extends Item
 {
-    public static int sellPrice = 20;
+    private static int sellPrice = 20;
     public static int buyPriceSeed = 10;
-    public static String name = "Carrot";
+    private static String name = "Carrot";
     public static int id = 1;
 
     // four growth stages
@@ -50,4 +50,6 @@ public class Carrot extends Item
     private void sell(){
         ((Farm)getWorld()).addMoney(this.sellPrice);
     }
+    public String getName() {return this.name;}
+    public int getSellPrice() {return this.sellPrice;}
 }
