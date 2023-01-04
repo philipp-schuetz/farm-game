@@ -9,7 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Radish extends Item
 {
     public static int sellPrice = 20;
-    static int buyPriceSeed = 10;
+    public static int buyPriceSeed = 10;
+    public static String name = "Radish";
+    public static int id = 0;
 
     // four growth stages
     int growthStage = 0;
@@ -36,12 +38,16 @@ public class Radish extends Item
 
             // right click to harvest crop (add to inventory, then remove from world)
             if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 3 && this.growthStage == 3) {
-                ((Farm)getWorld()).addItem(0, 1);
+                ((Farm)getWorld()).addItem(this.id, 1);
                 getWorld().removeObject(this);
             }
         }
         if (getWorld() instanceof InventoryUi) {
             this.setImage(new GreenfootImage("radish-inv.png"));
         }
+    }
+    
+    private void sell(){
+        ((Farm)getWorld()).addMoney(this.sellPrice);
     }
 }

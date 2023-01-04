@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Placeholder extends Item
 {
+    public static String sellPrice = "N/A";
+    public static String name = "N/A";
     /**
      * Act - do whatever the Placeholder wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

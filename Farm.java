@@ -21,6 +21,8 @@ public class Farm extends World
     // 0 - radish
     // 1 - carrot
     
+    private static int money;
+    
     /**
      * Constructor for objects of class Farm.
      * 
@@ -57,4 +59,6 @@ public class Farm extends World
             }
         }
     }
+    public int getMoney(){return this.money;}
+    public void addMoney(int amount){this.money += amount;}
 }
