@@ -2,7 +2,7 @@
 comment0.target=InventoryUi
 comment0.text=\n\ Write\ a\ description\ of\ class\ InventoryUi\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=world
-comment1.target=InventoryUi(greenfoot.World)
+comment1.target=InventoryUi(Farm)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ InventoryUi.\n\ \n
 comment2.params=
 comment2.target=void\ prepare()

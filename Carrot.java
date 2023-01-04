@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Radish here.
+ * Write a description of class Carrot here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Radish extends Item
+public class Carrot extends Item
 {
     public static int sellPrice = 20;
     static int buyPriceSeed = 10;
@@ -14,10 +14,10 @@ public class Radish extends Item
     // four growth stages
     int growthStage = 0;
     GreenfootImage[] growthStageImages = {
-            new GreenfootImage("radish-0.png"),
-            new GreenfootImage("radish-1.png"),
-            new GreenfootImage("radish-2.png"),
-            new GreenfootImage("radish-3.png")};
+            new GreenfootImage("carrot-0.png"),
+            new GreenfootImage("carrot-1.png"),
+            new GreenfootImage("carrot-2.png"),
+            new GreenfootImage("carrot-3.png")};
 
     int counter = 0;
     /**
@@ -36,12 +36,12 @@ public class Radish extends Item
 
             // right click to harvest crop (add to inventory, then remove from world)
             if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 3 && this.growthStage == 3) {
-                ((Farm)getWorld()).addItem(0, 1);
+                ((Farm)getWorld()).addItem(1, 1);
                 getWorld().removeObject(this);
             }
         }
         if (getWorld() instanceof InventoryUi) {
-            this.setImage(new GreenfootImage("radish-inv.png"));
+            this.setImage(new GreenfootImage("carrot-inv.png"));
         }
     }
 }

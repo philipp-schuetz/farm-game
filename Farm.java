@@ -16,9 +16,10 @@ public class Farm extends World
         };
     int[] fieldsStartPos = new int[]{2,2};
     
-    static int[] items = new int[24];
+    public static int[] items = new int[24];
     // inventory ids
     // 0 - radish
+    // 1 - carrot
     
     /**
      * Constructor for objects of class Farm.
