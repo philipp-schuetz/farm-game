@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Data
+comment0.text=\n\ Write\ a\ description\ of\ class\ Data\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Data()
+comment2.params=
+comment2.target=boolean\ write()
+comment3.params=
+comment3.target=void\ read()
+comment4.params=
+comment4.target=int\ getMoney()
+comment5.params=amount
+comment5.target=void\ setMoney(int)
+comment6.params=
+comment6.target=int\ getSeedSelected()
+comment7.params=seed
+comment7.target=void\ setSeedSelected(int)
+numComments=8

@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Carrot extends Item
 {
     private static int sellPrice = 20;
-    public static int buyPriceSeed = 10;
     private static String name = "Carrot";
     public static int id = 1;
 
@@ -30,7 +29,7 @@ public class Carrot extends Item
     {
         if (getWorld() instanceof Farm) {
             counter = counter + 1;
-            // change growth change after certain time period
+            // change growth change after certain time period11
             if (counter % 100 == 0 && growthStage < 3) {
                 this.growthStage = this.growthStage + 1;
             }
@@ -47,9 +46,12 @@ public class Carrot extends Item
         }
     }
 
+    public String getName() {return this.name;}
+
+    public int getSellPrice() {return this.sellPrice;}
+
     private void sell(){
         ((Farm)getWorld()).addMoney(this.sellPrice);
     }
-    public String getName() {return this.name;}
-    public int getSellPrice() {return this.sellPrice;}
+
 }

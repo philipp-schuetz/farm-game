@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Radish extends Item
 {
     private static int sellPrice = 20;
-    public static int buyPriceSeed = 10;
     private static String name = "Radish";
     public static int id = 0;
 
@@ -46,11 +45,12 @@ public class Radish extends Item
             this.setImage(new GreenfootImage("radish-inv.png"));
         }
     }
-    
+
+    public String getName() {return this.name;}
+
+    public int getSellPrice() {return this.sellPrice;}
+
     private void sell(){
         ((Farm)getWorld()).addMoney(this.sellPrice);
     }
-    
-    public String getName() {return this.name;}
-    public int getSellPrice() {return this.sellPrice;}
 }

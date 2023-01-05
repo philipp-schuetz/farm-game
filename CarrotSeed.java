@@ -1,18 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Items superclass holds all items used in the games as subclasses.
+ * Write a description of class CarrotSeed here.
  * 
- * @author (Philipp Schütz) 
+ * @author (your name) 
  * @version (a version number or a date)
  */
-public class Item extends Actor
+public class CarrotSeed extends Item
 {
-    private static int sellPrice;
-    private static String name;
-    
+    private static int sellPrice = 0;
+    public static int buyPrice = 10;
+    private static String name = "Carrot Seed";
+
     public String getName() {return this.name;}
+
     public int getSellPrice() {return this.sellPrice;}
+
     private void sell(){
         ((Farm)getWorld()).addMoney(this.sellPrice);
     }

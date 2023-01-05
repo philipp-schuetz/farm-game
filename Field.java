@@ -8,17 +8,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Field extends Actor
 {
-    /**
-     * Act - do whatever the Field wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int seedSelected;
+    // 0 - radish seed
+    // 1 - carrot seed
     public void act()
     {
         if(Greenfoot.mouseClicked(this)){
-            // open seeds/harvest menu
-            // is still clicked when crop growing?
+            Data data = new Data();
+
+            seedSelected = data.getSeedSelected();
+
             MouseInfo mouse = Greenfoot.getMouseInfo();
-            getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
+            if (seedSelected == 0){
+                getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
+                //check in inventory if have seeds
+            } else if (seedSelected == 1){
+                getWorld().addObject(new Carrot(), mouse.getX(), mouse.getY());
+            } else if (seedSelected == -1){ //use default crop when unset
+                getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
+            }
         }
     }
 }

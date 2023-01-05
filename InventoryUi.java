@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class InventoryUi extends World
 {
-    Farm farmWorld;
+    public Farm farmWorld;
     int baseYImg = 100;
     int baseYName = 120;
     int baseYPrice = 140;
@@ -39,6 +39,11 @@ public class InventoryUi extends World
         addObject(new ExitButton(this.farmWorld),1008,16);
         addObject(new MoneyIcon(),750,120);
         addObject(new MoneyText(this.farmWorld),850,120);
+        
+        // components for seed selection
+        Text seedSelectText = new Text("Carrot", 30);
+        addObject(seedSelectText, 850, 200);
+        addObject(new SeedSelectButton(seedSelectText), 750, 200);
 
         for (int i = 0; i < this.farmWorld.items.length; i++) {
             if (i == 0){
@@ -46,6 +51,12 @@ public class InventoryUi extends World
             }
             else if(i == 1){
                 this.item = new Carrot();
+            }
+            else if(i == 2){
+                this.item = new RadishSeed();
+            }
+            else if(i == 3){
+                this.item = new CarrotSeed();
             }
             // if no item is assigned to inventory slot
             else {
@@ -59,8 +70,8 @@ public class InventoryUi extends World
                 this.iMod += 8;
             }
 
-            this.textName = new Text(this.item.getName()+": "+this.farmWorld.items[i], 20);
-            this.textPrice = new Text("G: "+this.item.getSellPrice(), 20);
+            this.textName = new Text(this.item.getName()+": "+this.farmWorld.items[i], 15);
+            this.textPrice = new Text("Worth: "+this.item.getSellPrice(), 15);
 
             int xAdd = (i-this.iMod)*this.shift;
             addObject(this.item, this.baseX+xAdd, this.baseYImg);

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=CarrotSeed
+comment0.text=\n\ Write\ a\ description\ of\ class\ CarrotSeed\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment2.params=
+comment2.target=int\ getSellPrice()
+comment3.params=
+comment3.target=void\ sell()
+numComments=4

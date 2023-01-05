@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=SeedSelectButton
+comment0.text=\n\ Write\ a\ description\ of\ class\ SeedSelectButton\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=text
+comment1.target=SeedSelectButton(Text)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ updateText()
+numComments=4
