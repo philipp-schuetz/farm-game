@@ -21,6 +21,11 @@ public class Farm extends World
         // Create a new world with 32x16 cells with a cell size of 32x32 pixels.
         super(32, 16, 32);
         prepare();
+        
+        Data data = new Data();
+        if(data.getMoney()<=0){
+            data.setMoney(20);
+        }
     }
     
     public void act(){
