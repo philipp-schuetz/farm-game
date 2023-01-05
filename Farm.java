@@ -30,6 +30,9 @@ public class Farm extends World
         
         ShopButton shopButton = new ShopButton();
         addObject(shopButton,3,14);
+        
+        Horse horse = new Horse();
+        addObject(horse,28,3);
 
         // set fields into world
         for (int i = 0; i < this.fields.length; i++) {
