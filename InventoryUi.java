@@ -38,14 +38,15 @@ public class InventoryUi extends World
     {
         addObject(new ExitButton(this.farmWorld),1008,16);
         addObject(new MoneyIcon(),750,120);
-        addObject(new MoneyText(this.farmWorld),850,120);
+        addObject(new MoneyText(),850,120);
         
         // components for seed selection
         Text seedSelectText = new Text("Carrot", 30);
         addObject(seedSelectText, 850, 200);
         addObject(new SeedSelectButton(seedSelectText), 750, 200);
-
-        for (int i = 0; i < this.farmWorld.items.length; i++) {
+        
+        Data data = new Data();
+        for (int i = 0; i < data.items.length; i++) {
             if (i == 0){
                 this.item = new Radish();
             }
@@ -70,7 +71,7 @@ public class InventoryUi extends World
                 this.iMod += 8;
             }
 
-            this.textName = new Text(this.item.getName()+": "+this.farmWorld.items[i], 15);
+            this.textName = new Text(this.item.getName()+": "+data.items[i], 15);
             this.textPrice = new Text("Worth: "+this.item.getSellPrice(), 15);
 
             int xAdd = (i-this.iMod)*this.shift;

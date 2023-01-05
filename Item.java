@@ -10,6 +10,7 @@ public class Item extends Actor
 {
     private static int sellPrice;
     private static String name;
+    private static int id;
 
     public String getName() {return this.name;}
 
@@ -17,6 +18,9 @@ public class Item extends Actor
 
     private void sell(){
         Data data = new Data();
-        data.addMoney(this.sellPrice);
+        if (data.items[this.id] > 0){
+            data.addMoney(this.sellPrice);
+            data.items[this.id] -= 1;
+        }
     }
 }

@@ -13,12 +13,12 @@ public class Field extends Actor
     // 1 - carrot seed
     public void act()
     {
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 1){
             Data data = new Data();
 
             seedSelected = data.getSeedSelected();
 
-            if (((Farm)getWorld()).items[seedSelected+2] <= 0) {
+            if (data.items[seedSelected+2] <= 0) {
                 //if no seeds in inventory alert
                 getWorld().addObject(new Alert("you need to buy seeds first", 20, 128), 10, 0);
             } else {
@@ -34,7 +34,8 @@ public class Field extends Actor
                 }
                 
                 // use seed
-                ((Farm)getWorld()).items[seedSelected+2] -= 1;
+                data.items[seedSelected+2] -= 1;
+                data.write();
             }
         }
     }

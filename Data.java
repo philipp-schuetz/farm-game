@@ -16,7 +16,14 @@ public class Data extends Actor
 {
     String filename = "save.txt";
 
-    public int[] data = {-1,-1};
+    public static int[] items = new int[24];
+    // inventory ids
+    // 0 - radish
+    // 1 - carrot
+    // 2 - radish seed
+    // 3 - carrot seed
+
+    private static int[] data = {0,-1};
     // money, seedSelected
 
     // creates save file if one does not exist
@@ -37,20 +44,26 @@ public class Data extends Actor
             FileWriter writer = new FileWriter(this.filename);
             writer.write(Integer.toString(this.data[0]) + "\n");
             writer.write(Integer.toString(this.data[1]) + "\n");
+            writer.write(this.arrayToString(items));
             writer.close();
             return true;
         } catch (IOException e) {return false;}
     }
 
-    //read and save data
+    //read data
     public void read(){
         try {
             File file = new File(this.filename);
             Scanner reader = new Scanner(file);
             int i = 0;
-            while (i < this.data.length) {
+            while (i < 3) {
                 String tempdata = reader.nextLine();
-                this.data[i] = Integer.parseInt(tempdata);
+                if(i<2){
+                    this.data[i] = Integer.parseInt(tempdata);
+                }
+                else if (i==2){
+                    this.items = this.stringToArray(tempdata);
+                }
                 i += 1;
             }
             reader.close();
@@ -63,9 +76,8 @@ public class Data extends Actor
         this.data[0] = amount;
         this.write();
     }
-    
-        public void addMoney(int amount){
-        if (this.data[0] == -1) {this.data[0] = 0;}
+
+    public void addMoney(int amount){
         this.data[0] += amount;
         this.write();
     }
@@ -76,4 +88,27 @@ public class Data extends Actor
         this.data[1] = seed;
         this.write();
     }
+
+    public void addItem(int id, int count) {
+        this.items[id] += count;
+        this.write();
+    }
+
+    private String arrayToString(int[] array){
+        String string = "";
+        for (int i = 0; i < array.length; i++) {
+            string += Integer.toString(array[i])+",";
+        }
+        return string;
+    }
+
+    private int[] stringToArray(String string){
+        String[] stringArr = string.split(",");
+        int[] intArr = new int[24];
+        for (int i = 0; i < intArr.length; i++) {
+            intArr[i] = Integer.parseInt(stringArr[i]);
+        }
+        return intArr;
+    }
+
 }

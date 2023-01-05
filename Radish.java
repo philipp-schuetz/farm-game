@@ -20,7 +20,6 @@ public class Radish extends Item
             new GreenfootImage("radish-1.png"),
             new GreenfootImage("radish-2.png"),
             new GreenfootImage("radish-3.png")};
-
     int counter = 0;
     /**
      * Act - do whatever the Radish wants to do. This method is called whenever
@@ -38,13 +37,15 @@ public class Radish extends Item
 
             // right click to harvest crop (add to inventory, add seed to inventory, then remove from world)
             if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 3 && this.growthStage == 3) {
-                ((Farm)getWorld()).addItem(this.id, 1);
-                ((Farm)getWorld()).addItem(this.seedId, 1);
+                Data data = new Data();
+                data.addItem(this.id, 1);
+                data.addItem(this.seedId, 1);
                 getWorld().removeObject(this);
             }
         }
         if (getWorld() instanceof InventoryUi) {
             this.setImage(new GreenfootImage("radish-inv.png"));
+            if (Greenfoot.mouseClicked(this)){this.sell();}
         }
     }
 
@@ -54,6 +55,12 @@ public class Radish extends Item
 
     private void sell(){
         Data data = new Data();
-        data.addMoney(this.sellPrice);
+        if (data.items[this.id] > 0){
+            data.addMoney(this.sellPrice);
+            data.items[this.id] -= 1;
+            data.write();
+        }
+        Farm farmWorld = ((InventoryUi)getWorld()).farmWorld;
+        Greenfoot.setWorld(new InventoryUi(farmWorld));
     }
 }

@@ -8,18 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MoneyText extends Interface
 {
-    Farm farmWorld;
-    
-    public MoneyText(Farm farmWorld) {
-        this.farmWorld = farmWorld;
-    }
-    
     public void act()
     {
         Data data = new Data();
         setImage(new GreenfootImage("" + data.getMoney(), 40, Color.WHITE, new Color(0,0,0,0)));
         if(Greenfoot.mouseClicked(this)) {
-            data.addMoney(10);
+            data.addMoney(100);
         }
     }
 }

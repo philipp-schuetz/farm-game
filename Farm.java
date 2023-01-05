@@ -16,35 +16,13 @@ public class Farm extends World
         };
     int[] fieldsStartPos = new int[]{2,2};
 
-    public static int[] items = new int[24];
-    // inventory ids
-    // 0 - radish
-    // 1 - carrot
-    // 2 - radish seed
-    // 3 - carrot seed
-    /**
-     * Constructor for objects of class Farm.
-     * 
-     */
     public Farm()
     {    
         // Create a new world with 32x16 cells with a cell size of 32x32 pixels.
         super(32, 16, 32);
         prepare();
-
-        // starter seeds - remove later
-        this.items[2] = 2;
     }
 
-    // add item to inventory
-    public void addItem(int id, int count) {
-        this.items[id] = this.items[id] + count;
-    }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
         InventoryButton inventoryButton = new InventoryButton();

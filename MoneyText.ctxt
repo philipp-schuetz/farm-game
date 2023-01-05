@@ -1,8 +1,6 @@
 #BlueJ class context
 comment0.target=MoneyText
 comment0.text=\n\ Write\ a\ description\ of\ class\ MoneyText\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=farmWorld
-comment1.target=MoneyText(Farm)
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment1.params=
+comment1.target=void\ act()
+numComments=2
