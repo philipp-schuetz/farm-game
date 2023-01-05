@@ -15,11 +15,11 @@ public class RadishSeed extends Item
     
         public void act(){
                 if (getWorld() instanceof InventoryUi) {
-            this.setImage(new GreenfootImage("radish-inv.png"));
+            this.setImage(new GreenfootImage("radish-0.png"));
             if (Greenfoot.mouseClicked(this)){this.sell();}
         }
                 if (getWorld() instanceof ShopUi) {
-            this.setImage(new GreenfootImage("radish-inv.png"));
+            this.setImage(new GreenfootImage("radish-0.png"));
             if (Greenfoot.mouseClicked(this)){this.buy();}
         }
     }

@@ -15,11 +15,11 @@ public class CarrotSeed extends Item
 
     public void act(){
                 if (getWorld() instanceof InventoryUi) {
-            this.setImage(new GreenfootImage("carrot-inv.png"));
+            this.setImage(new GreenfootImage("carrot-0.png"));
             if (Greenfoot.mouseClicked(this)){this.sell();}
         }
                 if (getWorld() instanceof ShopUi) {
-            this.setImage(new GreenfootImage("carrot-inv.png"));
+            this.setImage(new GreenfootImage("carrot-0.png"));
             if (Greenfoot.mouseClicked(this)){this.buy();}
         }
     }
