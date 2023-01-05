@@ -22,6 +22,10 @@ public class Farm extends World
         super(32, 16, 32);
         prepare();
     }
+    
+    public void act(){
+        Greenfoot.setSpeed(50);
+    }
 
     private void prepare()
     {
