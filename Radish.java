@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Radish extends Item
 {
     private static int sellPrice = 20;
+    private static int buyPrice = 20;
     private static String name = "Radish";
     public static int id = 0;
     private int seedId = 2;
@@ -47,11 +48,16 @@ public class Radish extends Item
             this.setImage(new GreenfootImage("radish-inv.png"));
             if (Greenfoot.mouseClicked(this)){this.sell();}
         }
+                if (getWorld() instanceof ShopUi) {
+            this.setImage(new GreenfootImage("radish-inv.png"));
+            if (Greenfoot.mouseClicked(this)){this.buy();}
+        }
     }
 
     public String getName() {return this.name;}
 
     public int getSellPrice() {return this.sellPrice;}
+    public int getBuyPrice() {return this.buyPrice;}
 
     private void sell(){
         Data data = new Data();
@@ -62,5 +68,13 @@ public class Radish extends Item
         }
         Farm farmWorld = ((InventoryUi)getWorld()).farmWorld;
         Greenfoot.setWorld(new InventoryUi(farmWorld));
+    }
+    
+        private void buy(){
+        Data data = new Data();
+        if(data.getMoney() >= this.buyPrice) {
+            data.items[this.id] += 1;
+            data.setMoney(data.getMoney()-this.buyPrice);
+        }
     }
 }

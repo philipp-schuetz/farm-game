@@ -27,6 +27,9 @@ public class Farm extends World
     {
         InventoryButton inventoryButton = new InventoryButton();
         addObject(inventoryButton,1,14);
+        
+        ShopButton shopButton = new ShopButton();
+        addObject(shopButton,3,14);
 
         // set fields into world
         for (int i = 0; i < this.fields.length; i++) {

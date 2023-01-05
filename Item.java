@@ -9,12 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Item extends Actor
 {
     private static int sellPrice;
+    private static int buyPrice;
     private static String name;
     private static int id;
 
     public String getName() {return this.name;}
 
     public int getSellPrice() {return this.sellPrice;}
+    public int getBuyPrice() {return this.buyPrice;}
 
     private void sell(){
         Data data = new Data();

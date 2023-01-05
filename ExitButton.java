@@ -20,7 +20,7 @@ public class ExitButton extends Interface
     public void act()
     {
         if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("escape")) {
-            if (getWorld() instanceof InventoryUi) {
+            if (getWorld() instanceof InventoryUi || getWorld() instanceof ShopUi) {
                 Greenfoot.setWorld(exitTo);
             }
         }

@@ -13,9 +13,21 @@ public class CarrotSeed extends Item
     private static String name = "Carrot\nSeed";
     public static int id = 3;
 
+    public void act(){
+                if (getWorld() instanceof InventoryUi) {
+            this.setImage(new GreenfootImage("carrot-inv.png"));
+            if (Greenfoot.mouseClicked(this)){this.sell();}
+        }
+                if (getWorld() instanceof ShopUi) {
+            this.setImage(new GreenfootImage("carrot-inv.png"));
+            if (Greenfoot.mouseClicked(this)){this.buy();}
+        }
+    }
+    
     public String getName() {return this.name;}
 
     public int getSellPrice() {return this.sellPrice;}
+    public int getBuyPrice() {return this.buyPrice;}
 
     private void sell(){
         Data data = new Data();
@@ -26,5 +38,13 @@ public class CarrotSeed extends Item
         }
         Farm farmWorld = ((InventoryUi)getWorld()).farmWorld;
         Greenfoot.setWorld(new InventoryUi(farmWorld));
+    }
+    
+        private void buy(){
+        Data data = new Data();
+        if(data.getMoney() >= this.buyPrice) {
+            data.items[this.id] += 1;
+            data.setMoney(data.getMoney()-this.buyPrice);
+        }
     }
 }
