@@ -18,14 +18,23 @@ public class Field extends Actor
 
             seedSelected = data.getSeedSelected();
 
-            MouseInfo mouse = Greenfoot.getMouseInfo();
-            if (seedSelected == 0){
-                getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
-                //check in inventory if have seeds
-            } else if (seedSelected == 1){
-                getWorld().addObject(new Carrot(), mouse.getX(), mouse.getY());
-            } else if (seedSelected == -1){ //use default crop when unset
-                getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
+            if (((Farm)getWorld()).items[seedSelected+2] <= 0) {
+                //if no seeds in inventory alert
+                getWorld().addObject(new Alert("you need to buy seeds first", 20, 128), 10, 0);
+            } else {
+                MouseInfo mouse = Greenfoot.getMouseInfo();
+                if (seedSelected == 0){
+                    getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
+                    
+                } else if (seedSelected == 1){
+                    getWorld().addObject(new Carrot(), mouse.getX(), mouse.getY());
+                } else if (seedSelected == -1){ //use default crop when unset
+                    seedSelected = 0;
+                    getWorld().addObject(new Radish(), mouse.getX(), mouse.getY());
+                }
+                
+                // use seed
+                ((Farm)getWorld()).items[seedSelected+2] -= 1;
             }
         }
     }

@@ -11,6 +11,7 @@ public class Radish extends Item
     private static int sellPrice = 20;
     private static String name = "Radish";
     public static int id = 0;
+    private int seedId = 2;
 
     // four growth stages
     int growthStage = 0;
@@ -35,9 +36,10 @@ public class Radish extends Item
             }
             this.setImage(this.growthStageImages[growthStage]);
 
-            // right click to harvest crop (add to inventory, then remove from world)
+            // right click to harvest crop (add to inventory, add seed to inventory, then remove from world)
             if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 3 && this.growthStage == 3) {
                 ((Farm)getWorld()).addItem(this.id, 1);
+                ((Farm)getWorld()).addItem(this.seedId, 1);
                 getWorld().removeObject(this);
             }
         }
@@ -51,6 +53,7 @@ public class Radish extends Item
     public int getSellPrice() {return this.sellPrice;}
 
     private void sell(){
-        ((Farm)getWorld()).addMoney(this.sellPrice);
+        Data data = new Data();
+        data.addMoney(this.sellPrice);
     }
 }

@@ -22,9 +22,6 @@ public class Farm extends World
     // 1 - carrot
     // 2 - radish seed
     // 3 - carrot seed
-
-    private static int money;
-
     /**
      * Constructor for objects of class Farm.
      * 
@@ -34,6 +31,9 @@ public class Farm extends World
         // Create a new world with 32x16 cells with a cell size of 32x32 pixels.
         super(32, 16, 32);
         prepare();
+
+        // starter seeds - remove later
+        this.items[2] = 2;
     }
 
     // add item to inventory
@@ -61,8 +61,4 @@ public class Farm extends World
             }
         }
     }
-
-    public int getMoney(){return this.money;}
-
-    public void addMoney(int amount){this.money += amount;}
 }

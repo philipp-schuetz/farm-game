@@ -63,6 +63,12 @@ public class Data extends Actor
         this.data[0] = amount;
         this.write();
     }
+    
+        public void addMoney(int amount){
+        if (this.data[0] == -1) {this.data[0] = 0;}
+        this.data[0] += amount;
+        this.write();
+    }
 
     public int getSeedSelected(){return this.data[1];}
 

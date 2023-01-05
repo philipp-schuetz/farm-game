@@ -17,6 +17,7 @@ public class RadishSeed extends Item
     public int getSellPrice() {return this.sellPrice;}
 
     private void sell(){
-        ((Farm)getWorld()).addMoney(this.sellPrice);
+        Data data = new Data();
+        data.addMoney(this.sellPrice);
     }
 }

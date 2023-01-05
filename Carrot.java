@@ -11,6 +11,7 @@ public class Carrot extends Item
     private static int sellPrice = 20;
     private static String name = "Carrot";
     public static int id = 1;
+    private int seedId = 3;
 
     // four growth stages
     int growthStage = 0;
@@ -38,11 +39,13 @@ public class Carrot extends Item
             // right click to harvest crop (add to inventory, then remove from world)
             if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 3 && this.growthStage == 3) {
                 ((Farm)getWorld()).addItem(this.id, 1);
+                ((Farm)getWorld()).addItem(this.seedId, 1);
                 getWorld().removeObject(this);
             }
         }
         if (getWorld() instanceof InventoryUi) {
             this.setImage(new GreenfootImage("carrot-inv.png"));
+            if (Greenfoot.mouseClicked(this)){this.sell();}
         }
     }
 
@@ -51,7 +54,8 @@ public class Carrot extends Item
     public int getSellPrice() {return this.sellPrice;}
 
     private void sell(){
-        ((Farm)getWorld()).addMoney(this.sellPrice);
+        Data data = new Data();
+        data.addMoney(this.sellPrice);
     }
 
 }
