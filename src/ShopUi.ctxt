@@ -1,9 +1,8 @@
 #BlueJ class context
 comment0.target=ShopUi
-comment0.text=\n\ Write\ a\ description\ of\ class\ ShopUi\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Ui\ class\ for\ the\ shop.\n
 comment1.params=world
 comment1.target=ShopUi(Farm)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Shop.\n\ \n
 comment2.params=
 comment2.target=void\ prepare()
 numComments=3

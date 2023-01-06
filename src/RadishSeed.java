@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class RadishSeed here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * RadishSeed is a subclass to Items, which contains the data for RadishSeed objetcs.
  */
 public class RadishSeed extends Item
 {   
@@ -13,11 +10,12 @@ public class RadishSeed extends Item
         this.buyPrice = 10;
         this.name = "Radish\nSeed";
         this.id = 2;
-        this.inventoryImage = new GreenfootImage("radish-inv.png");
+        this.inventoryImage = new GreenfootImage("radish-0.png");
     }
 
     @Override
     public void act(){
+        // set image when in inventory or shop
         if (getWorld() instanceof InventoryUi) {
             this.setImage(this.inventoryImage);
             if (Greenfoot.mouseClicked(this)){this.sell();}

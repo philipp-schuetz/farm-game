@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Data
-comment0.text=\n\ Write\ a\ description\ of\ class\ Data\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Data\ class\ holds\ some\ game\ data.\n
 comment1.params=
 comment1.target=Data()
 comment10.params=array

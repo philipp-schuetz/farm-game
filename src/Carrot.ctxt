@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Carrot
-comment0.text=\n\ Write\ a\ description\ of\ class\ Carrot\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Carrot\ is\ a\ subclass\ to\ Items,\ which\ contains\ the\ data\ for\ Carrot\ objetcs.\n
 comment1.params=
 comment1.target=Carrot()
 numComments=2

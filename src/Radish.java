@@ -11,6 +11,7 @@ public class Radish extends Item
         this.name = "Radish";
         this.id = 0;
         this.seedId = 2;
+        this.growthTime = 100;
 
         this.growthStageImages[0] = new GreenfootImage("radish-0.png");
         this.growthStageImages[1] = new GreenfootImage("radish-1.png");

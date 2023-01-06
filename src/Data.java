@@ -7,10 +7,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner;
 
 /**
- * Write a description of class Data here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Data class holds some game data.
  */
 public class Data extends Actor
 {

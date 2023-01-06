@@ -11,18 +11,19 @@ public abstract class Item extends Actor
     static int id;
     int counter = 0;
     int growthStage = 0;
+    int growthTime = 0;
     int seedId;
-    
+
     GreenfootImage[] growthStageImages = new GreenfootImage[4];
     GreenfootImage inventoryImage;
 
     public void act()
     {
         if (getWorld() instanceof Farm) {
-            counter = counter + 1;
+            this.counter += 1;
             // change growth change after certain time period
-            if (counter % 100 == 0 && growthStage < 3) {
-                this.growthStage = this.growthStage + 1;
+            if (counter % growthTime == 0 && growthStage < 3) {
+                this.growthStage += 1;
             }
             this.setImage(this.growthStageImages[growthStage]);
 
@@ -34,22 +35,24 @@ public abstract class Item extends Actor
                 getWorld().removeObject(this);
             }
         }
+        // set image when in inventory or shop
         if (getWorld() instanceof InventoryUi) {
             this.setImage(this.inventoryImage);
             if (Greenfoot.mouseClicked(this)){this.sell();}
         }
-                if (getWorld() instanceof ShopUi) {
+        if (getWorld() instanceof ShopUi) {
             this.setImage(this.inventoryImage);
             if (Greenfoot.mouseClicked(this)){this.buy();}
         }
     }
-    
+
     String getName() {return this.name;}
 
     int getSellPrice() {return this.sellPrice;}
 
     int getBuyPrice() {return this.buyPrice;}
 
+    // sell action for items in the inventory
     void sell(){
         Data data = new Data();
         if (data.items[this.id] > 0){
@@ -57,15 +60,19 @@ public abstract class Item extends Actor
             data.items[this.id] -= 1;
             data.write();
         }
+        // refresh inventory after selling
         Farm farmWorld = ((InventoryUi)getWorld()).farmWorld;
         Greenfoot.setWorld(new InventoryUi(farmWorld));
     }
 
+    // buy action for items in the shop
     void buy(){
         Data data = new Data();
         if(data.getMoney() >= this.buyPrice) {
             data.items[this.id] += 1;
+            System.out.println("Added to inv: "+this.id);
             data.setMoney(data.getMoney()-this.buyPrice);
+            data.write();
         }
     }
 }

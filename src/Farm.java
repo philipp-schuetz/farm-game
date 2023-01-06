@@ -1,19 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Farm here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Main world of this project.
  */
 public class Farm extends World
 {
+    // fields on which can be used planting
     int[][] fields = {
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         };
+    //start coordinates for field placement
     int[] fieldsStartPos = new int[]{2,2};
 
     public Farm()
@@ -22,6 +21,7 @@ public class Farm extends World
         super(32, 16, 32);
         prepare();
         
+        // give player starter money on new save
         Data data = new Data();
         if(data.getMoney()<=0){
             data.setMoney(20);
@@ -29,21 +29,18 @@ public class Farm extends World
     }
     
     public void act(){
+        // set fixed speed, that growth speed of plants can't be influeced by player
         Greenfoot.setSpeed(50);
     }
 
     private void prepare()
     {
-        InventoryButton inventoryButton = new InventoryButton();
-        addObject(inventoryButton,1,14);
-        
-        ShopButton shopButton = new ShopButton();
-        addObject(shopButton,3,14);
-        
-        Horse horse = new Horse();
-        addObject(horse,28,3);
+        //add buttons and horse into world
+        addObject(new InventoryButton(),1,14);
+        addObject(new ShopButton(),3,14);
+        addObject(new Horse(),28,3);
 
-        // set fields into world
+        // place fields into world
         for (int i = 0; i < this.fields.length; i++) {
 
             for (int j = 0; j < this.fields[i].length; j++) {

@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class CarrotSeed here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * CarrotSeed is a subclass to Items, which contains the data for CarrotSeed objetcs.
  */
 public class CarrotSeed extends Item
 {
@@ -13,11 +10,12 @@ public class CarrotSeed extends Item
         this.buyPrice = 10;
         this.name = "Carrot\nSeed";
         this.id = 3;
-        this.inventoryImage = new GreenfootImage("carrot-inv.png");
+        this.inventoryImage = new GreenfootImage("carrot-0.png");
     }
 
     @Override
     public void act(){
+        // set image when in inventory or shop
         if (getWorld() instanceof InventoryUi) {
             this.setImage(this.inventoryImage);
             if (Greenfoot.mouseClicked(this)){this.sell();}

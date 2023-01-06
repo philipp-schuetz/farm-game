@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class InventoryUi here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Ui class for the inventory
  */
 public class InventoryUi extends World
 {
@@ -19,32 +16,32 @@ public class InventoryUi extends World
     Item item;
     Text textName;
     Text textPrice;
-    
-    /**
-     * Constructor for objects of class InventoryUi.
-     * 
-     */
+
     public InventoryUi(Farm world)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1024x512 cells with a cell size of 1x1 pixels.
         super(1024, 512, 1);
 
-        //save farm world
+        //save farm world to preserve state
         this.farmWorld = world;
         prepare();
     }
 
     private void prepare()
     {
+        // add exit button to return to Farm later
         addObject(new ExitButton(this.farmWorld),1008,16);
+        
+        // add objects for money display
         addObject(new MoneyIcon(),750,120);
         addObject(new MoneyText(),850,120);
         
         // components for seed selection
-        Text seedSelectText = new Text("Carrot", 30);
+        Text seedSelectText = new Text("", 30);
         addObject(seedSelectText, 850, 200);
         addObject(new SeedSelectButton(seedSelectText), 750, 200);
         
+        // place items from Data into inventory
         Data data = new Data();
         for (int i = 0; i < data.items.length; i++) {
             if (i == 0){
@@ -59,7 +56,7 @@ public class InventoryUi extends World
             else if(i == 3){
                 this.item = new CarrotSeed();
             }
-            // if no item is assigned to inventory slot
+            // use Placeholder if no item is assigned to inventory slot
             else {
                 this.item = new Placeholder();
             }
