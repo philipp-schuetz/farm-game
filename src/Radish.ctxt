@@ -1,17 +1,6 @@
 #BlueJ class context
 comment0.target=Radish
-comment0.text=\n\ Write\ a\ description\ of\ class\ Radish\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Radish\ is\ a\ subclass\ to\ Items,\ which\ contains\ the\ data\ for\ Radish\ objetcs.\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Radish\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment2.params=
-comment2.target=java.lang.String\ getName()
-comment3.params=
-comment3.target=int\ getSellPrice()
-comment4.params=
-comment4.target=int\ getBuyPrice()
-comment5.params=
-comment5.target=void\ sell()
-comment6.params=
-comment6.target=void\ buy()
-numComments=7
+comment1.target=Radish()
+numComments=2

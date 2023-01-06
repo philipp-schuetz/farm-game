@@ -8,43 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CarrotSeed extends Item
 {
-    private static int sellPrice = 0;
-    public static int buyPrice = 10;
-    private static String name = "Carrot\nSeed";
-    public static int id = 3;
+    public CarrotSeed(){
+        this.sellPrice = 0;
+        this.buyPrice = 10;
+        this.name = "Carrot\nSeed";
+        this.id = 3;
+        this.inventoryImage = new GreenfootImage("carrot-inv.png");
+    }
 
+    @Override
     public void act(){
-                if (getWorld() instanceof InventoryUi) {
-            this.setImage(new GreenfootImage("carrot-0.png"));
+        if (getWorld() instanceof InventoryUi) {
+            this.setImage(this.inventoryImage);
             if (Greenfoot.mouseClicked(this)){this.sell();}
         }
-                if (getWorld() instanceof ShopUi) {
-            this.setImage(new GreenfootImage("carrot-0.png"));
+        if (getWorld() instanceof ShopUi) {
+            this.setImage(this.inventoryImage);
             if (Greenfoot.mouseClicked(this)){this.buy();}
-        }
-    }
-    
-    public String getName() {return this.name;}
-
-    public int getSellPrice() {return this.sellPrice;}
-    public int getBuyPrice() {return this.buyPrice;}
-
-    private void sell(){
-        Data data = new Data();
-        if (data.items[this.id] > 0){
-            data.addMoney(this.sellPrice);
-            data.items[this.id] -= 1;
-            data.write();
-        }
-        Farm farmWorld = ((InventoryUi)getWorld()).farmWorld;
-        Greenfoot.setWorld(new InventoryUi(farmWorld));
-    }
-    
-        private void buy(){
-        Data data = new Data();
-        if(data.getMoney() >= this.buyPrice) {
-            data.items[this.id] += 1;
-            data.setMoney(data.getMoney()-this.buyPrice);
         }
     }
 }
