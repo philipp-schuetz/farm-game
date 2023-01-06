@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Field here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Fields on which crops are planted.
  */
 public class Field extends Actor
 {

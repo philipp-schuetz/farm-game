@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Money here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Ui class to display the money icon with an optional animation.
  */
 public class MoneyIcon extends Interface
 {

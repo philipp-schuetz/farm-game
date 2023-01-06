@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SeedSelectButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Button used for changing the currently selected seed for planting.
  */
 public class SeedSelectButton extends Interface
 {
@@ -20,6 +17,7 @@ public class SeedSelectButton extends Interface
     public SeedSelectButton(Text text) {
         this.seedSelectText = text;
         
+        // get currently selected seed when not on fresh save
         if(this.data.getSeedSelected() != -1){
             for (int i = 0; i < this.seeds.length; i++) {
                 if (i==this.data.getSeedSelected()) {
@@ -39,9 +37,8 @@ public class SeedSelectButton extends Interface
 
     public void act()
     {
-
         if(Greenfoot.mouseClicked(this)){
-            // save index where true and set to false
+            // get selected seed and set all value to false
             for (int i = 0; i < this.seeds.length; i++) {
                 if(this.seeds[i] == true) {
                     selected = i;
@@ -49,7 +46,8 @@ public class SeedSelectButton extends Interface
                     break;
                 }
             }
-
+            
+            // set next or first seed available to selected
             try {
                 this.selected += 1;
                 this.seeds[selected] = true;

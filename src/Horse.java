@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Horse here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Horse class adds functionality
  */
 public class Horse extends Animal
 {

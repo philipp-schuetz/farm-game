@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Alert here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Alert class provides temporary alert texts.
  */
 public class Alert extends Interface
 {
@@ -21,8 +18,8 @@ public class Alert extends Interface
 
     public void act()
     {
+        // set alert text and remove after certain amount of time
         setImage(new GreenfootImage(this.text, this.size, Color.WHITE, new Color(0,0,0,0)));
-
         if (counter < time){
             counter++;
         } else {

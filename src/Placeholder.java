@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Placeholder here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Placeholder acts as a placeholder for not existing items in inventory and shop.
  */
 public class Placeholder extends Item
 {
