@@ -5,14 +5,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Farm extends World
 {
-    // fields on which can be used planting
+    // fields which can be used for planting
     int[][] fields = {
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         };
-    //start coordinates for field placement
+    //start coordinates for field placement (left/top corner)
     int[] fieldsStartPos = new int[]{2,2};
 
     public Farm()
@@ -31,6 +31,10 @@ public class Farm extends World
     public void act(){
         // set fixed speed, that growth speed of plants can't be influeced by player
         Greenfoot.setSpeed(50);
+        
+        if(Greenfoot.isKeyDown("f1")) {
+            Greenfoot.setWorld(new Help(this));
+        }
     }
 
     private void prepare()
@@ -42,7 +46,6 @@ public class Farm extends World
 
         // place fields into world
         for (int i = 0; i < this.fields.length; i++) {
-
             for (int j = 0; j < this.fields[i].length; j++) {
                 if(this.fields[i][j] == 1) {
                     Field field = new Field();

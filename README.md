@@ -1,4 +1,4 @@
-# How to play
+# How to play (ingame help F1)
 
 ## Ui
 - Backpack on Farm = Inventory
@@ -12,7 +12,7 @@
 - you can buy your first seeds in the shop
 
 ## Buy
-- sell items in the inventory (click on the icon)
-
-## Shop
 - buy items in the shop (click on the icon)
+
+## Sell
+- sell items in the inventory (click on the icon)

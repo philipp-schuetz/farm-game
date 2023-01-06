@@ -14,16 +14,16 @@ public class Data extends Actor
     String filename = "save.txt";
 
     public static int[] items = new int[24];
-    // inventory ids
+    // inventory/item ids
     // 0 - radish
     // 1 - carrot
     // 2 - radish seed
     // 3 - carrot seed
 
-    private static int[] data = {0,-1};
     // money, seedSelected
+    private static int[] data = {0,-1};
 
-    // creates save file if one does not exist
+    // creates save file if one does not exist or reads from an existing one
     public Data(){
         try {
             File file = new File(this.filename);
@@ -93,6 +93,7 @@ public class Data extends Actor
 
     private String arrayToString(int[] array){
         String string = "";
+        // loop over array and return comma separeted value string
         for (int i = 0; i < array.length; i++) {
             string += Integer.toString(array[i])+",";
         }
@@ -100,12 +101,14 @@ public class Data extends Actor
     }
 
     private int[] stringToArray(String string){
+        // split string on "," and put values in stringArr
         String[] stringArr = string.split(",");
+        // loop over new integer array and save strings as integers in intArr
         int[] intArr = new int[24];
         for (int i = 0; i < intArr.length; i++) {
             intArr[i] = Integer.parseInt(stringArr[i]);
         }
         return intArr;
     }
-
+    float i = 0.5f;
 }

@@ -16,6 +16,7 @@ public class Horse extends Animal
     private void feedHorse(){
         Data data = new Data();
         if (data.items[1] > 0){
+            // remove one carrot from inventory
             data.items[1] -= 1;
             data.write();
 

@@ -6,23 +6,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class InventoryUi extends World
 {
     public Farm farmWorld;
+    // base positioning values for items
     int baseYImg = 100;
     int baseYName = 120;
     int baseYPrice = 140;
     int baseX = 120;
+    // distance from one inventory slot to another
     int shift = 80;
+    // modification of i to reset shift on new row
     int iMod = 0;
 
     Item item;
     Text textName;
     Text textPrice;
 
-    public InventoryUi(Farm world)
-    {    
+    public InventoryUi(Farm world){    
         // Create a new world with 1024x512 cells with a cell size of 1x1 pixels.
         super(1024, 512, 1);
 
-        //save farm world to preserve state
+        //save farm world to preserve state of Farm world
         this.farmWorld = world;
         prepare();
     }
@@ -60,7 +62,7 @@ public class InventoryUi extends World
             else {
                 this.item = new Placeholder();
             }
-            // modify base values on y-axis when changing column
+            // modify base/positioning values on y-axis of items when changing column (when ids 8 or 16 are reached)
             if (i % 8 == 0 && i != 0) {
                 this.baseYImg += shift;
                 this.baseYName += shift;
@@ -70,8 +72,10 @@ public class InventoryUi extends World
 
             this.textName = new Text(this.item.getName()+": "+data.items[i], 15);
             this.textPrice = new Text("Worth: "+this.item.getSellPrice(), 15);
-
+            
+            // additional move on x-axis
             int xAdd = (i-this.iMod)*this.shift;
+            
             addObject(this.item, this.baseX+xAdd, this.baseYImg);
             addObject(this.textName, this.baseX+xAdd, this.baseYName);
             addObject(this.textPrice, this.baseX+xAdd, this.baseYPrice);
