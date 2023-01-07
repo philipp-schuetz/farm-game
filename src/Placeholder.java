@@ -5,9 +5,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Placeholder extends Item
 {
-    private static int sellPrice = 0;
-    private static String name = "N/A";
-    
-    public String getName() {return this.name;}
-    public int getSellPrice() {return this.sellPrice;}
+    public Placeholder(){
+        this.sellPrice = 0;
+        this.name = "N/A";
+    }
 }

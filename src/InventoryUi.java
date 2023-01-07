@@ -13,7 +13,7 @@ public class InventoryUi extends World
     int baseX = 120;
     // distance from one inventory slot to another
     int shift = 80;
-    // modification of i to reset shift on new row
+    // modification of i to add more shift for each column
     int iMod = 0;
 
     Item item;
@@ -33,16 +33,16 @@ public class InventoryUi extends World
     {
         // add exit button to return to Farm later
         addObject(new ExitButton(this.farmWorld),1008,16);
-        
+
         // add objects for money display
         addObject(new MoneyIcon(),750,120);
         addObject(new MoneyText(),850,120);
-        
+
         // components for seed selection
         Text seedSelectText = new Text("", 30);
         addObject(seedSelectText, 850, 200);
         addObject(new SeedSelectButton(seedSelectText), 750, 200);
-        
+
         // place items from Data into inventory
         Data data = new Data();
         for (int i = 0; i < data.items.length; i++) {
@@ -62,20 +62,22 @@ public class InventoryUi extends World
             else {
                 this.item = new Placeholder();
             }
-            // modify base/positioning values on y-axis of items when changing column (when ids 8 or 16 are reached)
+            // modify base/positioning values on y-axis of items when changing row (when ids 8 or 16 are reached)
             if (i % 8 == 0 && i != 0) {
                 this.baseYImg += shift;
                 this.baseYName += shift;
                 this.baseYPrice += shift;
+                // "reset" shift on new row
                 this.iMod += 8;
             }
 
+            // create Text objects with data from save file
             this.textName = new Text(this.item.getName()+": "+data.items[i], 15);
             this.textPrice = new Text("Worth: "+this.item.getSellPrice(), 15);
-            
-            // additional move on x-axis
+
+            // shift on x-axis
             int xAdd = (i-this.iMod)*this.shift;
-            
+
             addObject(this.item, this.baseX+xAdd, this.baseYImg);
             addObject(this.textName, this.baseX+xAdd, this.baseYName);
             addObject(this.textPrice, this.baseX+xAdd, this.baseYPrice);

@@ -8,6 +8,7 @@ public class InventoryButton extends Interface
     public void act()
     {
         if(Greenfoot.mouseClicked(this)) {
+            //change world to inventory and provide current world as argument to return later
             Greenfoot.setWorld(new InventoryUi((Farm)this.getWorld()));
         }
         

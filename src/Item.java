@@ -38,10 +38,12 @@ public abstract class Item extends Actor
         // set image when in inventory or shop
         if (getWorld() instanceof InventoryUi) {
             this.setImage(this.inventoryImage);
+            // add sell option when in inventory
             if (Greenfoot.mouseClicked(this)){this.sell();}
         }
         if (getWorld() instanceof ShopUi) {
             this.setImage(this.inventoryImage);
+            // add buy option when in shop
             if (Greenfoot.mouseClicked(this)){this.buy();}
         }
     }
@@ -52,10 +54,11 @@ public abstract class Item extends Actor
 
     int getBuyPrice() {return this.buyPrice;}
 
-    // sell action for items in the inventory
+    // sell action for items in inventory
     void sell(){
         Data data = new Data();
         if (data.items[this.id] > 0){
+            // add money, remove item from inventory and save to file
             data.addMoney(this.sellPrice);
             data.items[this.id] -= 1;
             data.write();
@@ -65,12 +68,13 @@ public abstract class Item extends Actor
         Greenfoot.setWorld(new InventoryUi(farmWorld));
     }
 
-    // buy action for items in the shop
+    // buy action for items in shop
     void buy(){
+        System.out.println("item id: "+this.id);
+        // add item to inventory, remove money and save to file
         Data data = new Data();
         if(data.getMoney() >= this.buyPrice) {
             data.items[this.id] += 1;
-            System.out.println("Added to inv: "+this.id);
             data.setMoney(data.getMoney()-this.buyPrice);
             data.write();
         }

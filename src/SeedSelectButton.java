@@ -17,7 +17,7 @@ public class SeedSelectButton extends Interface
     public SeedSelectButton(Text text) {
         this.seedSelectText = text;
         
-        // get currently selected seed when not on fresh save
+        // get currently selected seed from save when not on new save
         if(this.data.getSeedSelected() != -1){
             for (int i = 0; i < this.seeds.length; i++) {
                 if (i==this.data.getSeedSelected()) {
@@ -47,7 +47,7 @@ public class SeedSelectButton extends Interface
                 }
             }
             
-            // set next or first seed available to selected
+            // set next or first(if at the end) seed available to selected
             try {
                 this.selected += 1;
                 this.seeds[selected] = true;
@@ -60,7 +60,6 @@ public class SeedSelectButton extends Interface
         }
         
         this.updateText();
-        
         this.data.setSeedSelected(selected);
     }
 

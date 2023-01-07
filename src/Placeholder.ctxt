@@ -2,7 +2,5 @@
 comment0.target=Placeholder
 comment0.text=\n\ Placeholder\ acts\ as\ a\ placeholder\ for\ not\ existing\ items\ in\ inventory\ and\ shop.\n
 comment1.params=
-comment1.target=java.lang.String\ getName()
-comment2.params=
-comment2.target=int\ getSellPrice()
-numComments=3
+comment1.target=Placeholder()
+numComments=2

@@ -20,11 +20,12 @@ public class MoneyIcon extends Interface
     boolean animation = false;
     public void act()
     {
+        // execute animation when it is turned on
         if (animation != false) {
             if(this.counter % 10 == 0) {
                 this.setImage(this.images[this.image]);
                 this.image = this.image+1;
-                if (this.image == 8) {
+                if (this.image == this.images.length) {
                     this.image = 0;
                 }
             }

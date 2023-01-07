@@ -12,7 +12,8 @@ public class Carrot extends Item
         this.id = 1;
         this.seedId = 3;
         this.growthTime = 200;
-
+        
+        // set own images for different growth stages
         this.growthStageImages[0] = new GreenfootImage("carrot-0.png");
         this.growthStageImages[1] = new GreenfootImage("carrot-1.png");
         this.growthStageImages[2] = new GreenfootImage("carrot-2.png");

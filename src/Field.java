@@ -11,8 +11,8 @@ public class Field extends Actor
     public void act()
     {
         if(Greenfoot.mouseClicked(this) && Greenfoot.getMouseInfo().getButton() == 1){
+            // get selected seed from save
             Data data = new Data();
-
             seedSelected = data.getSeedSelected();
 
             if (data.items[seedSelected+2] <= 0) {

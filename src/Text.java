@@ -14,6 +14,7 @@ public class Text extends Interface
     }
 
     public void act(){
+        // set image to text with given parameters
         setImage(new GreenfootImage(this.text, this.size, Color.WHITE, new Color(0,0,0,0)));
     }
 

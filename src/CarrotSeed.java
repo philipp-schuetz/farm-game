@@ -18,10 +18,12 @@ public class CarrotSeed extends Item
         // set image when in inventory or shop
         if (getWorld() instanceof InventoryUi) {
             this.setImage(this.inventoryImage);
+            // add sell option when in inventory
             if (Greenfoot.mouseClicked(this)){this.sell();}
         }
         if (getWorld() instanceof ShopUi) {
             this.setImage(this.inventoryImage);
+            // add buy option when in shop
             if (Greenfoot.mouseClicked(this)){this.buy();}
         }
     }
