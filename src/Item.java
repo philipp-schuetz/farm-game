@@ -5,10 +5,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Item extends Actor
 {
-    static int sellPrice;
-    static int buyPrice;
-    static String name;
-    static int id;
+    int sellPrice;
+    int buyPrice;
+    String name;
+    int id;
     int counter = 0;
     int growthStage = 0;
     int growthTime = 0;
@@ -70,7 +70,6 @@ public abstract class Item extends Actor
 
     // buy action for items in shop
     void buy(){
-        System.out.println("item id: "+this.id);
         // add item to inventory, remove money and save to file
         Data data = new Data();
         if(data.getMoney() >= this.buyPrice) {
