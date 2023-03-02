@@ -1,3 +1,6 @@
 .DS_Store
+gimp/
 not-used/
+doc/
 save.txt
+*.ctxt
