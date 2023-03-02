@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=InventoryUi
-comment0.text=\n\ Ui\ class\ for\ the\ inventory\n
-comment1.params=world
-comment1.target=InventoryUi(Farm)
-comment2.params=
-comment2.target=void\ prepare()
-numComments=3

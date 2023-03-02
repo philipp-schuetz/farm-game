@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=RadishSeed
-comment0.text=\n\ RadishSeed\ is\ a\ subclass\ to\ Items,\ which\ contains\ the\ data\ for\ RadishSeed\ objetcs.\n
-comment1.params=
-comment1.target=RadishSeed()
-comment2.params=
-comment2.target=void\ act()
-numComments=3
